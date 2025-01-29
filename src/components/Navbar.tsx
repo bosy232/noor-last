@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
     import { useTranslation } from 'react-i18next';
     import { Menu, Phone, User, X } from 'lucide-react';
     import LanguageToggle from './LanguageToggle';
+    import logo from '../assets/images/logo.png';
 
     const Navbar = () => {
       const { t, i18n } = useTranslation();
@@ -56,11 +57,11 @@ import React, { useState, useEffect, useRef } from 'react';
             <div className="flex justify-between items-center h-20">
               <div className={`flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-6`}>
                 <div className="flex-shrink-0">
-                  <h1 className={`text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent ${
-                    isArabic ? 'font-arabic' : ''
-                  }`}>
-                    {isArabic ? 'نور الشروق' : 'Noor Al-Shorouk'}
-                  </h1>
+                  <img
+                    src={logo}
+                    alt="Noor Al-Shorouk Hospital Logo"
+                    className="h-12"
+                  />
                 </div>
                 <div className={`hidden md:flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-6`}>
                   <a href="#services" className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${activeSection === 'services' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('services')}>
