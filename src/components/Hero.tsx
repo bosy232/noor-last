@@ -9,6 +9,10 @@ import React, { useState, useEffect } from 'react';
     import slide6 from '../assets/images/slide6.jpeg';
     import slide7 from '../assets/images/slide7.jpeg';
     import slide8 from '../assets/images/slide8.jpeg';
+    import slide9 from '../assets/images/slide9.jpeg';
+    import slide10 from '../assets/images/slide10.jpeg';
+    import slide11 from '../assets/images/slide11.jpeg';
+    import slide12 from '../assets/images/slide12.jpeg';
 
     const Hero = () => {
       const { t, i18n } = useTranslation();
