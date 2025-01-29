@@ -2,6 +2,7 @@ import React from 'react';
     import { useTranslation } from 'react-i18next';
 import zaki from '../assets/images/zaki.jpg';
 import Nassar from '../assets/images/Nassar.jpg';
+import Ragab from '../assets/images/Ragab.jpg';
 
     const doctors = [
       {
@@ -23,7 +24,7 @@ import Nassar from '../assets/images/Nassar.jpg';
         nameAr: "د. محمد رجب",
         specialty: "Urology",
         specialtyAr: "المسالك البولية",
-        image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80"
+        image: Ragab
       },
       {
         name: "Dr. Wafaa Khaled",
