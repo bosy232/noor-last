@@ -33,7 +33,11 @@ import React, { useState, useEffect } from 'react';
         slide5,
         slide6,
         slide7,
-        slide8
+        slide8,
+        slide9,
+        slide10,
+        slide11,
+        slide12
       ];
 
       useEffect(() => {
