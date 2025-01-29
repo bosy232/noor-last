@@ -167,16 +167,18 @@ import React, { useState, useEffect } from 'react';
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">{t('hero.department')}</label>
+                    <label className="block text-sm font-medium text-gray-700">
+                      {t('hero.department')}
+                    </label>
                     <select 
                       value={department}
                       onChange={(e) => setDepartment(e.target.value)}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-2"
+                      className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-2 ${isArabic ? 'text-right' : 'text-left'}`}
                     >
-                      <option>General Surgery</option>
-                      <option>Cardiology</option>
-                      <option>Neurology</option>
-                      <option>Pediatrics</option>
+                      <option value="General Surgery">{isArabic ? 'الجراحة العامة' : 'General Surgery'}</option>
+                      <option value="Cardiology">{isArabic ? 'القلب' : 'Cardiology'}</option>
+                      <option value="Neurology">{isArabic ? 'المخ والأعصاب' : 'Neurology'}</option>
+                      <option value="Pediatrics">{isArabic ? 'طب الأطفال' : 'Pediatrics'}</option>
                     </select>
                   </div>
                   {formError && <p className="text-red-500 text-sm">{formError}</p>}
