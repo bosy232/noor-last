@@ -3,6 +3,7 @@ import React from 'react';
 import zaki from '../assets/images/zaki.jpg';
 import Nassar from '../assets/images/Nassar.jpg';
 import Ragab from '../assets/images/Ragab.jpg';
+import Wafaa from '../assets/images/Wafaa.jpg';
 
     const doctors = [
       {
@@ -31,7 +32,7 @@ import Ragab from '../assets/images/Ragab.jpg';
         nameAr: "د. وفاء خالد",
         specialty: "Obstetrics and Gynecology",
         specialtyAr: "النساء والتوليد",
-        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80"
+        image: Wafaa
       }
     ];
 
