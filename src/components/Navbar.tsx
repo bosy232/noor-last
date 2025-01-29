@@ -59,7 +59,7 @@ import React, { useState, useEffect, useRef } from 'react';
                 <div className="flex-shrink-0">
                   <img
                     src={logo}
-                    alt="Noor Al-Shorouk Hospital Logo"
+                    alt=" Logo"
                     className="h-12"
                   />
                 </div>
