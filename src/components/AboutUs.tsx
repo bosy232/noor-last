@@ -1,5 +1,6 @@
 import React from 'react';
     import { useTranslation } from 'react-i18next';
+import teems from '../assets/images/teems.jpg';
 
     const AboutUs = () => {
       const { t, i18n } = useTranslation();
@@ -22,7 +23,7 @@ import React from 'react';
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="order-2 md:order-1">
                 <img
-                  src="https://images.unsplash.com/photo-1512102438733-bfa4ed29aef7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src=teems
                   alt="Hospital Team"
                   className="rounded-xl shadow-md hover:shadow-lg transition-shadow"
                 />
