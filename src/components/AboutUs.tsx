@@ -25,7 +25,7 @@ import teems from '../assets/images/teems.jpg';
               <div className="order-2 md:order-1">
                 <img
                   src= teems
-                  alt="Hospital Team"
+                  alt="Hospital"
                   className="rounded-xl shadow-md hover:shadow-lg transition-shadow"
                 />
               </div>
