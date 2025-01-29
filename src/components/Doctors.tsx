@@ -1,7 +1,7 @@
 import React from 'react';
     import { useTranslation } from 'react-i18next';
 import zaki from '../assets/images/zaki.jpg';
-import zaki from '../assets/images/Nassar.jpg';
+import Nassar from '../assets/images/Nassar.jpg';
 
     const doctors = [
       {
