@@ -1,6 +1,7 @@
 import React from 'react';
     import { useTranslation } from 'react-i18next';
 import zaki from '../assets/images/zaki.jpg';
+import zaki from '../assets/images/Nassar.jpg';
 
     const doctors = [
       {
@@ -15,7 +16,7 @@ import zaki from '../assets/images/zaki.jpg';
         nameAr: "د. محمود نصار",
         specialty: "General Surgery",
         specialtyAr: "الجراحة العامة",
-        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
+        image: Nassar
       },
       {
         name: "Dr. Mohamed Ragab",
