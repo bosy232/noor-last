@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "services": "Services",
+    "departments": "Departments",
+    "doctors": "Doctors",
+    "contact": "Contact",
+    "patientPortal": "Patient Portal"
+  },
+  "hero": {
+    "title": "World-Class Healthcare at Your Doorstep",
+    "subtitle": "Noor Al-Shorouk Hospital provides comprehensive medical care with cutting-edge technology and compassionate service since 1996.",
+    "bookAppointment": "Book Appointment",
+    "emergency": "Emergency",
+    "quickAppointment": "Quick Appointment",
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number",
+    "department": "Department",
+    "requestAppointment": "Request Appointment"
+  },
+  "services": {
+    "title": "Our Medical Services",
+    "subtitle": "We offer a comprehensive range of medical services with state-of-the-art facilities and experienced healthcare professionals.",
+    "cardiacCare": "Cardiac Care",
+    "neurosurgery": "Neurosurgery",
+    "pediatrics": "Pediatrics",
+    "ophthalmology": "Ophthalmology",
+    "internalMedicine": "Internal Medicine",
+    "oncology": "Oncology"
+  },
+  "departments": {
+    "title": "Our Medical Departments",
+    "subtitle": "Specialized departments equipped with the latest medical technologies to provide the best patient care"
+  },
+  "doctors": {
+    "title": "Our Medical Team",
+    "subtitle": "Our team of specialized doctors with extensive experience in various medical fields"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to answer your inquiries and provide assistance 24/7",
+    "info": "Contact Information",
+    "sendMessage": "Send a Message",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "address": "Al-Shorouk City, First Entrance from Al-Hurriya Square, 8th District, Cairo"
+  }
+}
