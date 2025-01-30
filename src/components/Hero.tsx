@@ -115,7 +115,7 @@ import React, { useState, useEffect } from 'react';
                 <div className="absolute inset-0 bg-black/20" />
               </div>
             ))}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-600/60 to-primary-800/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-primary-800/20" />
           </div>
           
           <div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32">
