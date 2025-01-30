@@ -1,6 +1,6 @@
 import React from 'react';
     import { useTranslation } from 'react-i18next';
-import teems from '../assets/images/teems.jpg';
+// import teems from '../assets/images/teems.jpg';
 
 
     const AboutUs = () => {
@@ -24,7 +24,7 @@ import teems from '../assets/images/teems.jpg';
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="order-2 md:order-1">
                 <img
-                  src= teems
+                  src= "../assets/images/teems.jpg"
                   alt="Hospital"
                   className="rounded-xl shadow-md hover:shadow-lg transition-shadow"
                 />
