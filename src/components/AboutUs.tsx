@@ -25,7 +25,7 @@ import React from 'react';
               <div className="order-2 md:order-1">
                 <img
                   src= "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDczfHx8ZW58MHx8fHx8"
-                  alt="Hospital"
+                  alt="teem"
                   className="rounded-xl shadow-md hover:shadow-lg transition-shadow"
                 />
               </div>
