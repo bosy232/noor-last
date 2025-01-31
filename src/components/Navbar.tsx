@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
     import LanguageToggle from './LanguageToggle';
     import logo from '../assets/images/logo.png';
 
+    
     const Navbar = () => {
       const { t, i18n } = useTranslation();
       const isArabic = i18n.language === 'ar';
@@ -68,7 +69,7 @@ import React, { useState, useEffect, useRef } from 'react';
                     {t('nav.services')}
                   </a>
                   <a href="#departments" className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${activeSection === 'departments' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('departments')}>
-                    {t('nav.departments')}
+                    {isArabic ? 'المراكز الطبية' : 'Medical Centers'}
                   </a>
                   <a href="#doctors" className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${activeSection === 'doctors' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('doctors')}>
                     {t('nav.doctors')}
@@ -113,7 +114,7 @@ import React, { useState, useEffect, useRef } from 'react';
                     {t('nav.services')}
                   </a>
                   <a href="#departments" className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${activeSection === 'departments' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('departments')}>
-                    {t('nav.departments')}
+                    {isArabic ? 'المراكز الطبية' : 'Medical Centers'}
                   </a>
                   <a href="#doctors" className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${activeSection === 'doctors' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('doctors')}>
                     {t('nav.doctors')}
@@ -141,3 +142,4 @@ import React, { useState, useEffect, useRef } from 'react';
     };
 
     export default Navbar;
+
