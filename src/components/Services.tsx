@@ -1,51 +1,114 @@
 import React from 'react';
-    import { useTranslation } from 'react-i18next';
-    import { Heart, Brain, Baby, Eye, Stethoscope, Syringe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Heart, Brain, Baby, Stethoscope, Syringe, Activity, Microscope, Pill, Bone, Eye, UserPlus, Scale, Stethoscope as Internal, Sun as Lung, LucideKey as Kidney, FlaskRound as Flask, Ear, Scissors, HeartPulse, Dna, Speech, Brain as Psych } from 'lucide-react';
 
     const services = [
-      {
-        icon: Heart,
-        title: 'Cardiac Care',
-        titleAr: 'رعاية القلب',
-        description: 'State-of-the-art cardiac and vascular surgery with latest Philips catheter devices.',
-        descriptionAr: 'جراحة القلب والأوعية الدموية المتطورة مع أحدث أجهزة قسطرة فيليبس.'
-      },
-      {
-        icon: Brain,
-        title: 'Neurosurgery',
-        titleAr: 'جراحة المخ والأعصاب',
-        description: 'Expert treatment of complex neurological conditions with advanced techniques.',
-        descriptionAr: 'علاج متخصص لحالات المخ والأعصاب المعقدة بتقنيات متقدمة.'
-      },
-      {
-        icon: Baby,
-        title: 'Pediatrics',
-        titleAr: 'طب الأطفال',
-        description: 'Specialized care for children and newborns with 24/7 NICU support.',
-        descriptionAr: 'رعاية متخصصة للأطفال وحديثي الولادة مع دعم وحدة العناية المركزة على مدار الساعة.'
-      },
-      {
-        icon: Eye,
-        title: 'Ophthalmology',
-        titleAr: 'طب العيون',
-        description: 'Comprehensive diagnosis and treatment of all eye diseases.',
-        descriptionAr: 'تشخيص وعلاج شامل لجميع أمراض العيون.'
-      },
-      {
-        icon: Stethoscope,
-        title: 'Internal Medicine',
-        titleAr: 'الطب الباطني',
-        description: 'Expert diagnosis and treatment of various internal medical conditions.',
-        descriptionAr: 'تشخيص وعلاج متخصص لمختلف الحالات الطبية الباطنية.'
-      },
-      {
-        icon: Syringe,
-        title: 'Oncology',
-        titleAr: 'علاج الأورام',
-        description: 'Advanced cancer diagnosis and treatment with personalized care plans.',
-        descriptionAr: 'تشخيص وعلاج متقدم للسرطان مع خطط رعاية شخصية.'
-      }
-    ];
+  {
+    icon: Heart,
+    title: 'Cardiothoracic Surgery',
+    titleAr: 'جراحة قلب وصدر',
+    description: 'Open-heart surgery, thoracic surgery, and major vascular procedures',
+    descriptionAr: 'جراحات القلب المفتوح، جراحات الصدر، وجراحات الأوعية الدموية الكبرى'
+  },
+  {
+    icon: HeartPulse,
+    title: 'Cardiology',
+    titleAr: 'قلب وأوعية دموية',
+    description: 'Diagnostic and therapeutic cardiac catheterization',
+    descriptionAr: 'قسطرة القلب التشخيصية والعلاجية'
+  },
+  {
+    icon: Internal,
+    title: 'Internal Medicine',
+    titleAr: 'باطنة',
+    description: 'General internal medicine with ICU and infectious diseases',
+    descriptionAr: 'الطب الباطني العام مع العناية المركزة والأمراض المعدية'
+  },
+  {
+    icon: Lung,
+    title: 'Gastroenterology',
+    titleAr: 'جهاز هضمي ومناظير',
+    description: 'Diagnostic and therapeutic endoscopy services',
+    descriptionAr: 'خدمات المناظير التشخيصية والعلاجية'
+  },
+  {
+    icon: Flask,
+    title: 'Diabetes & Endocrinology',
+    titleAr: 'سكر وغدد صماء',
+    description: 'Treatment of diabetes and endocrine disorders',
+    descriptionAr: 'علاج السكري واضطرابات الغدد الصماء'
+  },
+  {
+    icon: Kidney,
+    title: 'Nephrology',
+    titleAr: 'أمراض كلى',
+    description: 'Kidney diseases, dialysis, and transplant services',
+    descriptionAr: 'أمراض الكلى، الغسيل الكلوي، وخدمات زراعة الكلى'
+  },
+  {
+    icon: Microscope,
+    title: 'Oncology',
+    titleAr: 'أورام',
+    description: 'Medical, radiation, and surgical oncology',
+    descriptionAr: 'علاج الأورام الطبي والإشعاعي والجراحي'
+  },
+  {
+    icon: Ear,
+    title: 'ENT',
+    titleAr: 'أنف وأذن وحنجرة',
+    description: 'ENT surgery and hearing disorders treatment',
+    descriptionAr: 'جراحة الأنف والأذن والحنجرة وعلاج اضطرابات السمع'
+  },
+  {
+    icon: Scissors,
+    title: 'Vascular Surgery',
+    titleAr: 'جراحة أوعية دموية',
+    description: 'Treatment of varicose veins and arterial diseases',
+    descriptionAr: 'علاج الدوالي وأمراض الشرايين'
+  },
+  {
+    icon: Baby,
+    title: 'Pediatrics',
+    titleAr: 'أطفال وحديثي الولادة',
+    description: 'Pediatric care with NICU facilities',
+    descriptionAr: 'رعاية الأطفال مع وحدة العناية المركزة لحديثي الولادة'
+  },
+  {
+    icon: Stethoscope,
+    title: 'Urology',
+    titleAr: 'مسالك بولية',
+    description: 'Urological surgery and prostate treatment',
+    descriptionAr: 'جراحة المسالك البولية وعلاج البروستاتا'
+  },
+  {
+    icon: Brain,
+    title: 'Neurology',
+    titleAr: 'مخ وأعصاب',
+    description: 'Treatment of neurological disorders and stroke',
+    descriptionAr: 'علاج الاضطرابات العصبية والسكتة الدماغية'
+  },
+  {
+    icon: UserPlus,
+    title: 'Obstetrics & Gynecology',
+    titleAr: 'نساء وتوليد',
+    description: 'Pregnancy care and gynecological surgery',
+    descriptionAr: 'رعاية الحمل وجراحة النساء'
+  },
+  {
+    icon: Scale,
+    title: 'Bariatric Surgery',
+    titleAr: 'جراحة سمنة',
+    description: 'Weight loss surgery and follow-up care',
+    descriptionAr: 'جراحات إنقاص الوزن ورعاية المتابعة'
+  },
+  {
+    icon: Speech,
+    title: 'Speech Therapy',
+    titleAr: 'نطق وتخاطب',
+    description: 'Treatment of speech and communication disorders',
+    descriptionAr: 'علاج اضطرابات النطق والتواصل'
+  }
+];
 
     const Services = () => {
       const { t, i18n } = useTranslation();
