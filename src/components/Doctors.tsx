@@ -13,7 +13,7 @@ import Wafaa from '../assets/images/Wafaa.jpg';
       {
         name: "Dr. Sayed Zaki",
         nameAr: "د. السيد زكي",
-        image: zaki
+        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80"
       }
     ]
   },
@@ -91,11 +91,6 @@ import Wafaa from '../assets/images/Wafaa.jpg';
         image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
       },
       {
-        name: "Dr. Mahmoud Nassar",
-        nameAr: "د. محمود نصار",
-        image: Nassar
-      },
-      {
         name: "Dr. Mostafa El Sheikh",
         nameAr: "د. مصطفى الشيخ",
         image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80"
@@ -121,10 +116,10 @@ import Wafaa from '../assets/images/Wafaa.jpg';
         nameAr: "د. رقية سيد",
         image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
       },
-      {
+			{
         name: "Dr. Wafaa Khaled",
         nameAr: "د. وفاء خالد",
-        image: "Wafaa"
+        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
       }
     ]
   },
@@ -175,13 +170,23 @@ const Doctors = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
 
   const filteredDoctors = doctors.filter(dept => {
-    const deptMatch = selectedDepartment === 'all' || dept.department.toLowerCase() === selectedDepartment;
-    const searchMatch = searchTerm === '' || 
-      dept.doctors.some(doc => 
-        (isArabic ? doc.nameAr : doc.name).toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (isArabic ? dept.departmentAr : dept.department).toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    return deptMatch && searchMatch;
+    if (selectedDepartment !== 'all' && dept.department.toLowerCase() !== selectedDepartment.toLowerCase()) {
+      return false;
+    }
+    
+    if (searchTerm === '') {
+      return true;
+    }
+
+    const searchLower = searchTerm.toLowerCase();
+    const hasDoctorMatch = dept.doctors.some(doc => 
+      (isArabic ? doc.nameAr : doc.name).toLowerCase().includes(searchLower)
+    );
+    const hasDepartmentMatch = (isArabic ? dept.departmentAr : dept.department)
+      .toLowerCase()
+      .includes(searchLower);
+
+    return hasDoctorMatch || hasDepartmentMatch;
   });
 
   return (
@@ -216,7 +221,7 @@ const Doctors = () => {
           >
             <option value="all">{isArabic ? 'جميع التخصصات' : 'All Departments'}</option>
             {doctors.map((dept, index) => (
-              <option key={index} value={dept.department.toLowerCase()}>
+              <option key={index} value={dept.department}>
                 {isArabic ? dept.departmentAr : dept.department}
               </option>
             ))}
@@ -227,7 +232,7 @@ const Doctors = () => {
           {filteredDoctors.map((dept, index) => (
             <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-red-600 mb-6">
+                <h3 className="text-xl font-semibold text-blue-600 mb-6">
                   {isArabic ? dept.departmentAr : dept.department}
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
