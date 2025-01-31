@@ -1,9 +1,5 @@
 import React from 'react';
     import { useTranslation } from 'react-i18next';
-import zaki from '../assets/images/zaki.jpg';
-import Nassar from '../assets/images/Nassar.jpg';
-import Ragab from '../assets/images/Ragab.jpg';
-import Wafaa from '../assets/images/Wafaa.jpg';
 
    const doctors = [
   {
@@ -114,11 +110,6 @@ import Wafaa from '../assets/images/Wafaa.jpg';
       {
         name: "Dr. Roqia Sayed",
         nameAr: "د. رقية سيد",
-        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
-      },
-			{
-        name: "Dr. Wafaa Khaled",
-        nameAr: "د. وفاء خالد",
         image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
       }
     ]
