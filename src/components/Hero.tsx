@@ -63,7 +63,7 @@ import React, { useState, useEffect } from 'react';
         }, 300);
       };
 
-      const handleBookAppointment = () => {
+        const handleBookAppointment = () => {
         const servicesSection = document.getElementById('services');
         if (servicesSection) {
           servicesSection.scrollIntoView({ behavior: 'smooth' });
@@ -79,7 +79,7 @@ import React, { useState, useEffect } from 'react';
         setFormError('');
         setFormSuccess('');
 
-        if (!name || !phone) {
+        if (!name || !phone || !department || !doctor || !date || !time) {
           setFormError(isArabic ? 'الرجاء ملء جميع الحقول' : 'Please fill in all fields.');
           return;
         }
@@ -96,8 +96,51 @@ import React, { useState, useEffect } from 'react';
           setFormSuccess(isArabic ? 'تم طلب الموعد بنجاح!' : 'Appointment requested successfully!');
           setName('');
           setPhone('');
-          setDepartment('General Surgery');
+          setDepartment('Internal Medicine');
+          setDoctor('');
+          setDate('');
+          setTime('');
         }, 500);
+      };
+
+      const doctorsByDepartment = {
+        "Internal Medicine": ["Dr. Sayed Zaki"],
+        "Dermatology": ["Dr. Essam Shaker", "Dr. Hala Shawky"],
+        "Neurology": ["Dr. Suleiman Maghrabi"],
+        "Ear, Nose, and Throat (ENT)": ["Dr. Abdel Sattar Hassan Khamis", "Dr. Noman Hassan Noman"],
+        "Orthopedics": ["Dr. Sherif Zoheir", "Dr. Tarek Yahya", "Dr. Mohamed Fathy"],
+        "General Surgery": ["Dr. Mohamed Hossam", "Dr. Mostafa El Sheikh", "Dr. Mohamed Hesham"],
+        "Obstetrics and Gynecology": ["Dr. Esraa El-Bilqini", "Dr. Roqia Sayed"],
+        "Cardiology": ["Dr. Hossam Magdy", "Dr. Ehab El-Hefny"],
+        "Gastroenterology and Endoscopy": ["Dr. Samar Kamal"],
+        "Diet and Nutrition": ["Dr. Mona Abdel Khaleq"],
+        "Diabetes and Endocrinology": ["Dr. Emad Moussa"],
+        "Pediatrics and Neonatology": ["Dr. Mohamed Fadel", "Dr. Abdallah Saad", "Dr. Hassan El-Hefnawy"],
+        "Cardiothoracic Surgery": ["Dr. Sami Amin"],
+        "Nephrology": ["Dr. Negm El-Din Mohamed Amer"],
+        "Urology": ["Dr. Mohamed Ragab"],
+        "Vascular Surgery": ["Dr. Abdel Rahman Yahya"],
+        "Psychiatry": ["Dr. Ahmed El-Nahhas"]
+      };
+
+      const doctorsByDepartmentAr = {
+        "Internal Medicine": ["د. سيد زكي"],
+        "Dermatology": ["د. عصام شاكر", "د. هالة شوقي"],
+        "Neurology": ["د. سليمان مغربي"],
+        "Ear, Nose, and Throat (ENT)": ["د. عبد الستار حسن خميس", "د. نعمان حسن نعمان"],
+        "Orthopedics": ["د. شريف زهير", "د. طارق يحيى", "د. محمد فتحي"],
+        "General Surgery": ["د. محمد حسام", "د. مصطفى الشيخ", "د. محمد هشام"],
+        "Obstetrics and Gynecology": ["د. إسراء البلقيني", "د. رقية سيد"],
+        "Cardiology": ["د. حسام مجدي", "د. إيهاب الحفني"],
+        "Gastroenterology and Endoscopy": ["د. سمر كمال"],
+        "Diet and Nutrition": ["د. منى عبد الخالق"],
+        "Diabetes and Endocrinology": ["د. عماد موسى"],
+        "Pediatrics and Neonatology": ["د. محمد فاضل", "د. عبد الله سعد", "د. حسن الحفناوي"],
+        "Cardiothoracic Surgery": ["د. سامي أمين"],
+        "Nephrology": ["د. نجم الدين محمد عامر"],
+        "Urology": ["د. محمد رجب"],
+        "Vascular Surgery": ["د. عبد الرحمن يحيى"],
+        "Psychiatry": ["د. أحمد النحاس"]
       };
 
       return (
@@ -118,7 +161,7 @@ import React, { useState, useEffect } from 'react';
             <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-primary-800/20" />
           </div>
           
-          <div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32">
+<div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-white">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
@@ -130,14 +173,14 @@ import React, { useState, useEffect } from 'react';
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button
                     onClick={handleBookAppointment}
-                    className="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold flex items-center justify-center hover:bg-gray-100 transition-all transform hover:scale-105"
+                    className="btn btn-primary"
                   >
                     <Calendar className="w-5 h-5 mr-2" />
                     {t('hero.bookAppointment')}
                   </button>
                   <button
                     onClick={handleEmergencyCall}
-                    className="bg-white border-2 border-white text-primary-600 px-8 py-3 rounded-full font-semibold flex items-center justify-center hover:bg-gray-100 transition-all transform hover:scale-105"
+                    className="btn btn-secondary"
                   >
                     <Phone className="w-5 h-5 mr-2" />
                     {t('hero.emergency')}: 01113444234
@@ -149,43 +192,98 @@ import React, { useState, useEffect } from 'react';
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">{t('hero.quickAppointment')}</h2>
                 <form className="space-y-4" onSubmit={handleRequestAppointment}>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">{t('hero.fullName')}</label>
+                    <label className="form-label">{t('hero.fullName')}</label>
                     <input
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-2"
+                      className="form-input"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">{t('hero.phoneNumber')}</label>
+                    <label className="form-label">{t('hero.phoneNumber')}</label>
                     <input
                       type="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-2"
+                      className="form-input"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">
-                      {t('hero.department')}
-                    </label>
+                    <label className={`form-label ${isArabic ? 'text-right' : ''}`}>{t('hero.department')}</label>
                     <select 
                       value={department}
-                      onChange={(e) => setDepartment(e.target.value)}
-                      className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-2 ${isArabic ? 'text-right' : 'text-left'}`}
+                      onChange={(e) => {
+                        setDepartment(e.target.value);
+                        setDoctor('');
+                      }}
+                      className={`form-select ${isArabic ? 'text-right' : ''}`}
                     >
+                      <option value="Internal Medicine">{isArabic ? 'الطب الباطني' : 'Internal Medicine'}</option>
+                      <option value="Dermatology">{isArabic ? 'الأمراض الجلدية' : 'Dermatology'}</option>
+                      <option value="Neurology">{isArabic ? 'طب الأعصاب' : 'Neurology'}</option>
+                      <option value="Ear, Nose, and Throat (ENT)">{isArabic ? 'الأنف والأذن والحنجرة' : 'Ear, Nose, and Throat (ENT)'}</option>
+                      <option value="Orthopedics">{isArabic ? 'جراحة العظام' : 'Orthopedics'}</option>
                       <option value="General Surgery">{isArabic ? 'الجراحة العامة' : 'General Surgery'}</option>
-                      <option value="Cardiology">{isArabic ? 'القلب' : 'Cardiology'}</option>
-                      <option value="Neurology">{isArabic ? 'المخ والأعصاب' : 'Neurology'}</option>
-                      <option value="Pediatrics">{isArabic ? 'طب الأطفال' : 'Pediatrics'}</option>
+                      <option value="Obstetrics and Gynecology">{isArabic ? 'النساء والتوليد' : 'Obstetrics and Gynecology'}</option>
+                      <option value="Cardiology">{isArabic ? 'أمراض القلب' : 'Cardiology'}</option>
+                      <option value="Gastroenterology and Endoscopy">{isArabic ? 'الجهاز الهضمي والمناظير' : 'Gastroenterology and Endoscopy'}</option>
+                      <option value="Diet and Nutrition">{isArabic ? 'التغذية' : 'Diet and Nutrition'}</option>
+                      <option value="Diabetes and Endocrinology">{isArabic ? 'السكري والغدد الصماء' : 'Diabetes and Endocrinology'}</option>
+                      <option value="Pediatrics and Neonatology">{isArabic ? 'طب الأطفال وحديثي الولادة' : 'Pediatrics and Neonatology'}</option>
+                      <option value="Cardiothoracic Surgery">{isArabic ? 'جراحة القلب والصدر' : 'Cardiothoracic Surgery'}</option>
+                      <option value="Nephrology">{isArabic ? 'أمراض الكلى' : 'Nephrology'}</option>
+                      <option value="Urology">{isArabic ? 'المسالك البولية' : 'Urology'}</option>
+                      <option value="Vascular Surgery">{isArabic ? 'جراحة الأوعية الدموية' : 'Vascular Surgery'}</option>
+                      <option value="Psychiatry">{isArabic ? 'الطب النفسي' : 'Psychiatry'}</option>
                     </select>
+                  </div>
+                  {department && (
+                    <div>
+                      <label className={`form-label ${isArabic ? 'text-right' : ''}`}>
+                        {t('hero.doctor')}
+                      </label>
+                      <select
+                        value={doctor}
+                        onChange={(e) => setDoctor(e.target.value)}
+                        className={`form-select ${isArabic ? 'text-right' : ''}`}
+                      >
+                        <option value="">{isArabic ? 'اختر طبيب' : 'Select a doctor'}</option>
+                        {isArabic ? (doctorsByDepartmentAr[department]?.map((doc, index) => (
+                          <option key={index} value={doc}>{doc}</option>
+                        ))) : (doctorsByDepartment[department]?.map((doc, index) => (
+                          <option key={index} value={doc}>{doc}</option>
+                        )))}
+                      </select>
+                    </div>
+                  )}
+                  <div>
+                    <label className="form-label">
+                      {t('hero.date')}
+                    </label>
+                    <input
+                      type="date"
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
+                      className="form-input"
+                    />
+                  </div>
+                  <div>
+                    <label className="form-label">
+                      {t('hero.time')}
+                    </label>
+                    <input
+                      type="time"
+                      value={time}
+                      onChange={(e) => setTime(e.target.value)}
+                       className="form-input"
+                    />
                   </div>
                   {formError && <p className="text-red-500 text-sm">{formError}</p>}
                   {formSuccess && <p className="text-green-500 text-sm">{formSuccess}</p>}
                   <button
                     type="submit"
-                    className="w-full bg-primary-600 text-white px-6 py-3 rounded-full hover:bg-primary-700 transition-all transform hover:scale-102"
+                    className="btn btn-primary"
                   >
                     {t('hero.requestAppointment')}
                   </button>
