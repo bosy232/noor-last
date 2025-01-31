@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
     import { useTranslation } from 'react-i18next';
-    import { Calendar, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
+    import { Calendar, Phone, ChevronLeft, ChevronRight, Clock } from 'lucide-react';
     import slide1 from '../assets/images/slide1.jpeg';
     import slide2 from '../assets/images/slide2.jpeg';
     import slide3 from '../assets/images/slide3.jpeg';
@@ -21,7 +21,10 @@ import React, { useState, useEffect } from 'react';
       const [isTransitioning, setIsTransitioning] = useState(false);
       const [name, setName] = useState('');
       const [phone, setPhone] = useState('');
-      const [department, setDepartment] = useState('General Surgery');
+      const [department, setDepartment] = useState('Internal Medicine');
+      const [doctor, setDoctor] = useState('');
+      const [date, setDate] = useState('');
+      const [time, setTime] = useState('');
       const [formError, setFormError] = useState('');
       const [formSuccess, setFormSuccess] = useState('');
 
@@ -63,7 +66,7 @@ import React, { useState, useEffect } from 'react';
         }, 300);
       };
 
-        const handleBookAppointment = () => {
+      const handleBookAppointment = () => {
         const servicesSection = document.getElementById('services');
         if (servicesSection) {
           servicesSection.scrollIntoView({ behavior: 'smooth' });
@@ -81,6 +84,67 @@ import React, { useState, useEffect } from 'react';
 
         if (!name || !phone || !department || !doctor || !date || !time) {
           setFormError(isArabic ? 'الرجاء ملء جميع الحقول' : 'Please fill in all fields.');
+          return;
+        }
+
+        // Basic phone number validation
+        const phoneRegex = /^[0-9]{10,}$/;
+        if (!phoneRegex.test(phone)) {
+          setFormError(isArabic ? 'رقم الهاتف غير صالح' : 'Invalid phone number.');
+          return;
+        }
+
+        // Simulate form submission
+        setTimeout(() => {
+          setFormSuccess(isArabic ? 'تم طلب الموعد بنجاح!' : 'Appointment requested successfully!');
+          setName('');
+          setPhone('');
+          setDepartment('Internal Medicine');
+          setDoctor('');
+          setDate('');
+          setTime('');
+        }, 500);
+      };
+
+      const doctorsByDepartment = {
+        "Internal Medicine": ["Dr. Sayed Zaki"],
+        "Dermatology": ["Dr. Essam Shaker", "Dr. Hala Shawky"],
+        "Neurology": ["Dr. Suleiman Maghrabi"],
+        "Ear, Nose, and Throat (ENT)": ["Dr. Abdel Sattar Hassan Khamis", "Dr. Noman Hassan Noman"],
+        "Orthopedics": ["Dr. Sherif Zoheir", "Dr. Tarek Yahya", "Dr. Mohamed Fathy"],
+        "General Surgery": ["Dr. Mohamed Hossam", "Dr. Mostafa El Sheikh", "Dr. Mohamed Hesham"],
+        "Obstetrics and Gynecology": ["Dr. Esraa El-Bilqini", "Dr. Roqia Sayed"],
+        "Cardiology": ["Dr. Hossam Magdy", "Dr. Ehab El-Hefny"],
+        "Gastroenterology and Endoscopy": ["Dr. Samar Kamal"],
+        "Diet and Nutrition": ["Dr. Mona Abdel Khaleq"],
+        "Diabetes and Endocrinology": ["Dr. Emad Moussa"],
+        "Pediatrics and Neonatology": ["Dr. Mohamed Fadel", "Dr. Abdallah Saad", "Dr. Hassan El-Hefnawy"],
+        "Cardiothoracic Surgery": ["Dr. Sami Amin"],
+        "Nephrology": ["Dr. Negm El-Din Mohamed Amer"],
+        "Urology": ["Dr. Mohamed Ragab"],
+        "Vascular Surgery": ["Dr. Abdel Rahman Yahya"],
+        "Psychiatry": ["Dr. Ahmed El-Nahhas"]
+      };
+
+      const doctorsByDepartmentAr = {
+        "Internal Medicine": ["د. سيد زكي"],
+        "Dermatology": ["د. عصام شاكر", "د. هالة شوقي"],
+        "Neurology": ["د. سليمان مغربي"],
+        "Ear, Nose, and Throat (ENT)": ["د. عبد الستار حسن خميس", "د. نعمان حسن نعمان"],
+        "Orthopedics": ["د. شريف زهير", "د. طارق يحيى", "د. محمد فتحي"],
+        "General Surgery": ["د. محمد حسام", "د. مصطفى الشيخ", "د. محمد هشام"],
+        "Obstetrics and Gynecology": ["د. إسراء البلقيني", "د. رقية سيد"],
+        "Cardiology": ["د. حسام مجدي", "د. إيهاب الحفني"],
+        "Gastroenterology and Endoscopy": ["د. سمر كمال"],
+        "Diet and Nutrition": ["د. منى عبد الخالق"],
+        "Diabetes and Endocrinology": ["د. عماد موسى"],
+        "Pediatrics and Neonatology": ["د. محمد فاضل", "د. عبد الله سعد", "د. حسن الحفناوي"],
+        "Cardiothoracic Surgery": ["د. سامي أمين"],
+        "Nephrology": ["د. نجم الدين محمد عامر"],
+        "Urology": ["د. محمد رجب"],
+        "Vascular Surgery": ["د. عبد الرحمن يحيى"],
+        "Psychiatry": ["د. أحمد النحاس"]
+      };
           return;
         }
 
