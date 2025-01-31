@@ -1,18 +1,6 @@
 import React, { useState, useEffect } from 'react';
     import { useTranslation } from 'react-i18next';
     import { Calendar, Phone, ChevronLeft, ChevronRight, Clock } from 'lucide-react';
-    import slide1 from '../assets/images/slide1.jpeg';
-    import slide2 from '../assets/images/slide2.jpeg';
-    import slide3 from '../assets/images/slide3.jpeg';
-    import slide4 from '../assets/images/slide4.jpeg';
-    import slide5 from '../assets/images/slide5.jpeg';
-    import slide6 from '../assets/images/slide6.jpeg';
-    import slide7 from '../assets/images/slide7.jpeg';
-    import slide8 from '../assets/images/slide8.jpeg';
-    import slide9 from '../assets/images/slide9.jpeg';
-    import slide10 from '../assets/images/slide10.jpeg';
-    import slide11 from '../assets/images/slide11.jpeg';
-    import slide12 from '../assets/images/slide12.jpeg';
 
     const Hero = () => {
       const { t, i18n } = useTranslation();
@@ -29,18 +17,18 @@ import React, { useState, useEffect } from 'react';
       const [formSuccess, setFormSuccess] = useState('');
 
       const slides = [
-        slide1,
-        slide2,
-        slide3,
-        slide4,
-        slide5,
-        slide6,
-        slide7,
-        slide8,
-        slide9,
-        slide10,
-        slide11,
-        slide12
+        "https://images.unsplash.com/photo-1584036561584-44454678c782?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1584036561584-44454678c782?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1584036561584-44454678c782?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80"
       ];
 
       useEffect(() => {
@@ -145,67 +133,6 @@ import React, { useState, useEffect } from 'react';
         "Vascular Surgery": ["د. عبد الرحمن يحيى"],
         "Psychiatry": ["د. أحمد النحاس"]
       };
-          return;
-        }
-
-        // Basic phone number validation
-        const phoneRegex = /^[0-9]{10,}$/;
-        if (!phoneRegex.test(phone)) {
-          setFormError(isArabic ? 'رقم الهاتف غير صالح' : 'Invalid phone number.');
-          return;
-        }
-
-        // Simulate form submission
-        setTimeout(() => {
-          setFormSuccess(isArabic ? 'تم طلب الموعد بنجاح!' : 'Appointment requested successfully!');
-          setName('');
-          setPhone('');
-          setDepartment('Internal Medicine');
-          setDoctor('');
-          setDate('');
-          setTime('');
-        }, 500);
-      };
-
-      const doctorsByDepartment = {
-        "Internal Medicine": ["Dr. Sayed Zaki"],
-        "Dermatology": ["Dr. Essam Shaker", "Dr. Hala Shawky"],
-        "Neurology": ["Dr. Suleiman Maghrabi"],
-        "Ear, Nose, and Throat (ENT)": ["Dr. Abdel Sattar Hassan Khamis", "Dr. Noman Hassan Noman"],
-        "Orthopedics": ["Dr. Sherif Zoheir", "Dr. Tarek Yahya", "Dr. Mohamed Fathy"],
-        "General Surgery": ["Dr. Mohamed Hossam", "Dr. Mostafa El Sheikh", "Dr. Mohamed Hesham"],
-        "Obstetrics and Gynecology": ["Dr. Esraa El-Bilqini", "Dr. Roqia Sayed"],
-        "Cardiology": ["Dr. Hossam Magdy", "Dr. Ehab El-Hefny"],
-        "Gastroenterology and Endoscopy": ["Dr. Samar Kamal"],
-        "Diet and Nutrition": ["Dr. Mona Abdel Khaleq"],
-        "Diabetes and Endocrinology": ["Dr. Emad Moussa"],
-        "Pediatrics and Neonatology": ["Dr. Mohamed Fadel", "Dr. Abdallah Saad", "Dr. Hassan El-Hefnawy"],
-        "Cardiothoracic Surgery": ["Dr. Sami Amin"],
-        "Nephrology": ["Dr. Negm El-Din Mohamed Amer"],
-        "Urology": ["Dr. Mohamed Ragab"],
-        "Vascular Surgery": ["Dr. Abdel Rahman Yahya"],
-        "Psychiatry": ["Dr. Ahmed El-Nahhas"]
-      };
-
-      const doctorsByDepartmentAr = {
-        "Internal Medicine": ["د. سيد زكي"],
-        "Dermatology": ["د. عصام شاكر", "د. هالة شوقي"],
-        "Neurology": ["د. سليمان مغربي"],
-        "Ear, Nose, and Throat (ENT)": ["د. عبد الستار حسن خميس", "د. نعمان حسن نعمان"],
-        "Orthopedics": ["د. شريف زهير", "د. طارق يحيى", "د. محمد فتحي"],
-        "General Surgery": ["د. محمد حسام", "د. مصطفى الشيخ", "د. محمد هشام"],
-        "Obstetrics and Gynecology": ["د. إسراء البلقيني", "د. رقية سيد"],
-        "Cardiology": ["د. حسام مجدي", "د. إيهاب الحفني"],
-        "Gastroenterology and Endoscopy": ["د. سمر كمال"],
-        "Diet and Nutrition": ["د. منى عبد الخالق"],
-        "Diabetes and Endocrinology": ["د. عماد موسى"],
-        "Pediatrics and Neonatology": ["د. محمد فاضل", "د. عبد الله سعد", "د. حسن الحفناوي"],
-        "Cardiothoracic Surgery": ["د. سامي أمين"],
-        "Nephrology": ["د. نجم الدين محمد عامر"],
-        "Urology": ["د. محمد رجب"],
-        "Vascular Surgery": ["د. عبد الرحمن يحيى"],
-        "Psychiatry": ["د. أحمد النحاس"]
-      };
 
       return (
         <div className="relative bg-white pt-20">
@@ -222,10 +149,10 @@ import React, { useState, useEffect } from 'react';
                 <div className="absolute inset-0 bg-black/20" />
               </div>
             ))}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-primary-800/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-600/40 to-primary-800/40" />
           </div>
           
-<div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32">
+          <div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-white">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
@@ -305,7 +232,7 @@ import React, { useState, useEffect } from 'react';
                   {department && (
                     <div>
                       <label className={`form-label ${isArabic ? 'text-right' : ''}`}>
-                        {t('hero.doctor')}
+                        {t('Doctor')}
                       </label>
                       <select
                         value={doctor}
@@ -323,7 +250,7 @@ import React, { useState, useEffect } from 'react';
                   )}
                   <div>
                     <label className="form-label">
-                      {t('hero.date')}
+                      {t('Date')}
                     </label>
                     <input
                       type="date"
@@ -334,7 +261,7 @@ import React, { useState, useEffect } from 'react';
                   </div>
                   <div>
                     <label className="form-label">
-                      {t('hero.time')}
+                      {t('Time')}
                     </label>
                     <input
                       type="time"
