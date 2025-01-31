@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Search } from 'lucide-react';
+import zaki from '../assets/images/zaki.jpg';
+import Nassar from '../assets/images/Nassar.jpg';
+import Wafaa from '../assets/images/Wafaa.jpg';
+
 
 const doctors = [
   {
@@ -10,7 +14,7 @@ const doctors = [
       {
         name: "Dr. Sayed Zaki",
         nameAr: "د. السيد زكي",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80"
+        image: zaki
       }
     ]
   },
@@ -93,6 +97,11 @@ const doctors = [
         image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80"
       },
       {
+        name: "Dr. Mahmoud Nassar",
+        nameAr: "د. محمود نصار",
+        image: Nassar
+      },
+      {
         name: "Dr. Mohamed Hesham",
         nameAr: "د. محمد هشام",
         image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80"
@@ -116,7 +125,7 @@ const doctors = [
 			{
         name: "Dr. Wafaa Khaled",
         nameAr: "د. وفاء خالد",
-        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
+        image: Wafaa
       }
     ]
   },
