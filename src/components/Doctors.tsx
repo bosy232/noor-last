@@ -1,7 +1,8 @@
-import React from 'react';
-    import { useTranslation } from 'react-i18next';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Search } from 'lucide-react';
 
-   const doctors = [
+const doctors = [
   {
     department: "Internal Medicine",
     departmentAr: "الطب الباطني",
@@ -110,6 +111,11 @@ import React from 'react';
       {
         name: "Dr. Roqia Sayed",
         nameAr: "د. رقية سيد",
+        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
+      },
+			{
+        name: "Dr. Wafaa Khaled",
+        nameAr: "د. وفاء خالد",
         image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
       }
     ]
@@ -223,7 +229,7 @@ const Doctors = () => {
           {filteredDoctors.map((dept, index) => (
             <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-blue-600 mb-6">
+                <h3 className="text-xl font-semibold text-red-600 mb-6">
                   {isArabic ? dept.departmentAr : dept.department}
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
