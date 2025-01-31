@@ -1,7 +1,7 @@
 {
       "nav": {
         "services": "الخدمات",
-        "departments": "الأقسام",
+        "departments": "المراكز الطبية",
         "doctors": "الأطباء",
         "contact": "اتصل بنا",
         "patientPortal": "بوابة المريض"
@@ -45,5 +45,27 @@
         "message": "الرسالة",
         "send": "إرسال",
         "address": "مدينة الشروق، المدخل الأول من ميدان الحرية، الحي الثامن، القاهرة"
-      }
+      },
+      "departmentOptions": {
+        "Internal Medicine": "الطب الباطني",
+        "Dermatology": "الأمراض الجلدية",
+        "Neurology": "طب الأعصاب",
+        "Ear, Nose, and Throat (ENT)": "الأنف والأذن والحنجرة",
+        "Orthopedics": "جراحة العظام",
+        "General Surgery": "الجراحة العامة",
+        "Obstetrics and Gynecology": "النساء والتوليد",
+        "Cardiology": "أمراض القلب",
+        "Gastroenterology and Endoscopy": "الجهاز الهضمي والمناظير",
+        "Diet and Nutrition": "التغذية",
+        "Diabetes and Endocrinology": "السكري والغدد الصماء",
+        "Pediatrics and Neonatology": "طب الأطفال وحديثي الولادة",
+        "Cardiothoracic Surgery": "جراحة القلب والصدر",
+        "Nephrology": "أمراض الكلى",
+        "Urology": "المسالك البولية",
+        "Vascular Surgery": "جراحة الأوعية الدموية",
+        "Psychiatry": "الطب النفسي"
+      },
+      "doctor": "الطبيب",
+      "date": "التاريخ",
+      "time": "الوقت"
     }
