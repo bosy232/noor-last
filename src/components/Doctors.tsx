@@ -4,6 +4,23 @@ import { Search } from 'lucide-react';
 import zaki from '../assets/images/zaki.jpg';
 import Nassar from '../assets/images/Nassar.jpg';
 import Wafaa from '../assets/images/Wafaa.jpg';
+import Shaker from '../assets/images/Shaker.jpg';
+import Shawky from '../assets/images/Shawky.jpg';
+import Maghrabi from '../assets/images/Maghrabi.jpg';
+import Khamis from '../assets/images/Khamis.jpg';
+import Noman from '../assets/images/Noman.jpg';
+import Zoheir from '../assets/images/Zoheir.jpg';
+import Yahya from '../assets/images/Yahya.jpg';
+import Fathy from '../assets/images/Fathy.jpg';
+import Hossam from '../assets/images/Hossam.jpg';
+import Sheikh from '../assets/images/Sheikh.jpg';
+import Hesham from '../assets/images/Hesham.jpg';
+import Bilqini from '../assets/images/Bilqini.jpg';
+import Roqia from '../assets/images/Roqia.jpg';
+import Magdy from '../assets/images/Magdy.jpg';
+import Hefny from '../assets/images/Hefny.jpg';
+import Kamal from '../assets/images/Kamal.jpg';
+import Khaleq from '../assets/images/Khaleq.jpg';
 
 
 const doctors = [
@@ -25,12 +42,12 @@ const doctors = [
       {
         name: "Dr. Essam Shaker",
         nameAr: "د. عصام شاكر",
-        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
+        image: Shaker
       },
       {
         name: "Dr. Hala Shawky",
         nameAr: "د. هالة شوقي",
-        image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80"
+        image: Shawky
       }
     ]
   },
@@ -41,7 +58,7 @@ const doctors = [
       {
         name: "Dr. Suleiman Maghrabi",
         nameAr: "د. سليمان مغربي",
-        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80"
+        image: Maghrabi
       }
     ]
   },
@@ -52,12 +69,12 @@ const doctors = [
       {
         name: "Dr. Abdel Sattar Hassan Khamis",
         nameAr: "د. عبد الستار حسن خميس",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80"
+        image: Khamis
       },
       {
         name: "Dr. Noman Hassan Noman",
         nameAr: "د. نعمان حسن نعمان",
-        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
+        image: Noman
       }
     ]
   },
@@ -68,17 +85,17 @@ const doctors = [
       {
         name: "Dr. Sherif Zoheir",
         nameAr: "د. شريف زهير",
-        image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80"
+        image: Zoheir
       },
       {
         name: "Dr. Tarek Yahya",
         nameAr: "د. طارق يحيى",
-        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80"
+        image: Yahya
       },
       {
         name: "Dr. Mohamed Fathy",
         nameAr: "د. محمد فتحي",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80"
+        image: Fathy
       }
     ]
   },
@@ -89,12 +106,12 @@ const doctors = [
       {
         name: "Dr. Mohamed Hossam",
         nameAr: "د. محمد حسام",
-        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
+        image: Hossam
       },
       {
         name: "Dr. Mostafa El Sheikh",
         nameAr: "د. مصطفى الشيخ",
-        image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80"
+        image: Sheikh
       },
       {
         name: "Dr. Mahmoud Nassar",
@@ -104,7 +121,7 @@ const doctors = [
       {
         name: "Dr. Mohamed Hesham",
         nameAr: "د. محمد هشام",
-        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80"
+        image: Hesham
       }
     ]
   },
@@ -115,12 +132,12 @@ const doctors = [
       {
         name: "Dr. Esraa El-Bilqini",
         nameAr: "د. إسراء البلقيني",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80"
+        image: Bilqini
       },
       {
         name: "Dr. Roqia Sayed",
         nameAr: "د. رقية سيد",
-        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
+        image: Roqia
       },
 			{
         name: "Dr. Wafaa Khaled",
@@ -136,12 +153,12 @@ const doctors = [
       {
         name: "Dr. Hossam Magdy",
         nameAr: "د. حسام مجدي",
-        image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80"
+        image: Magdy
       },
       {
         name: "Dr. Ehab El-Hefny",
         nameAr: "د. إيهاب الحفني",
-        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80"
+        image: Hefny
       }
     ]
   },
@@ -152,7 +169,7 @@ const doctors = [
       {
         name: "Dr. Samar Kamal",
         nameAr: "د. سمر كمال",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80"
+        image: Kamal
       }
     ]
   },
@@ -163,7 +180,7 @@ const doctors = [
       {
         name: "Dr. Mona Abdel Khaleq",
         nameAr: "د. منى عبد الخالق",
-        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80"
+        image: Khaleq
       }
     ]
   }
