@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-sans;
+  
+}
+
+.section-title {
+  @apply text-3xl font-bold text-gray-900 mb-4 text-center;
+}
+
+.section-subtitle {
+  @apply text-gray-600 max-w-2xl mx-auto text-center;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow;
+}
+
+.card-image {
+  @apply h-48 overflow-hidden;
+}
+
+.card-content {
+  @apply p-6;
+}
+
+.card-title {
+  @apply text-xl font-semibold text-gray-900 mb-2;
+}
+
+.card-text {
+  @apply text-gray-600;
+}
+
+.btn {
+  @apply px-6 py-3 rounded-full font-semibold transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50 inline-flex items-center justify-center;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500;
+}
+
+.form-input {
+  @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-2;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.form-select {
+  @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-2;
+}
+
+.form-textarea {
+  @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 px-4 py-2;
+}
+
+.transition-all-transform {
+  @apply transition-all transform hover:scale-105;
+}
