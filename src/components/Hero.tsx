@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
-    import { useTranslation } from 'react-i18next';
-    import { Calendar, Phone, ChevronLeft, ChevronRight, Clock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Calendar, Phone, ChevronLeft, ChevronRight, Clock } from 'lucide-react';
 import slide1 from '../assets/images/slide1.jpeg';
 import slide2 from '../assets/images/slide2.jpeg';
-    import slide3 from '../assets/images/slide3.jpeg';
-    import slide4 from '../assets/images/slide4.jpeg';
-    import slide5 from '../assets/images/slide5.jpeg';
-    import slide6 from '../assets/images/slide6.jpeg';
-    import slide7 from '../assets/images/slide7.jpeg';
-    import slide8 from '../assets/images/slide8.jpeg';
-    import slide9 from '../assets/images/slide9.jpeg';
-    import slide10 from '../assets/images/slide10.jpeg';
-    import slide11 from '../assets/images/slide11.jpeg';
-    import slide12 from '../assets/images/slide12.jpeg';
+import slide3 from '../assets/images/slide3.jpeg';
+import slide4 from '../assets/images/slide4.jpeg';
+import slide5 from '../assets/images/slide5.jpeg';
+import slide6 from '../assets/images/slide6.jpeg';
+import slide7 from '../assets/images/slide7.jpeg';
+import slide8 from '../assets/images/slide8.jpeg';
+import slide9 from '../assets/images/slide9.jpeg';
+import slide10 from '../assets/images/slide10.jpeg';
+import slide11 from '../assets/images/slide11.jpeg';
+import slide12 from '../assets/images/slide12.jpeg';
+
 
 
     const Hero = () => {
@@ -43,7 +44,6 @@ import slide2 from '../assets/images/slide2.jpeg';
         slide11,
         slide12
       ];
-
 
       useEffect(() => {
         const timer = setInterval(() => {
