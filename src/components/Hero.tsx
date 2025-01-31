@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from 'react';
     import { useTranslation } from 'react-i18next';
     import { Calendar, Phone, ChevronLeft, ChevronRight, Clock } from 'lucide-react';
+import slide1 from '../assets/images/slide1.jpeg';
+import slide2 from '../assets/images/slide2.jpeg';
+    import slide3 from '../assets/images/slide3.jpeg';
+    import slide4 from '../assets/images/slide4.jpeg';
+    import slide5 from '../assets/images/slide5.jpeg';
+    import slide6 from '../assets/images/slide6.jpeg';
+    import slide7 from '../assets/images/slide7.jpeg';
+    import slide8 from '../assets/images/slide8.jpeg';
+    import slide9 from '../assets/images/slide9.jpeg';
+    import slide10 from '../assets/images/slide10.jpeg';
+    import slide11 from '../assets/images/slide11.jpeg';
+    import slide12 from '../assets/images/slide12.jpeg';
+
 
     const Hero = () => {
       const { t, i18n } = useTranslation();
@@ -17,19 +30,20 @@ import React, { useState, useEffect } from 'react';
       const [formSuccess, setFormSuccess] = useState('');
 
       const slides = [
-        "https://images.unsplash.com/photo-1584036561584-44454678c782?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1584036561584-44454678c782?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1584036561584-44454678c782?auto=format&fit=crop&w=1000&q=80",
-        "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80"
+        slide1,
+        slide2,
+        slide3,
+        slide4,
+        slide5,
+        slide6,
+        slide7,
+        slide8,
+        slide9,
+        slide10,
+        slide11,
+        slide12
       ];
+
 
       useEffect(() => {
         const timer = setInterval(() => {
@@ -149,7 +163,7 @@ import React, { useState, useEffect } from 'react';
                 <div className="absolute inset-0 bg-black/20" />
               </div>
             ))}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-600/40 to-primary-800/40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-primary-800/20" />
           </div>
           
           <div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32">
