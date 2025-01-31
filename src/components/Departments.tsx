@@ -28,7 +28,7 @@ const departments = [
     nameAr: "الكلى والغسيل الكلوي",
     description: "Advanced kidney care with modern dialysis units and transplant services",
     descriptionAr: "رعاية متقدمة للكلى مع وحدات غسيل كلوي حديثة وخدمات زراعة الكلى",
-    image: "https://unsplash.com/photos/a-man-in-a-blue-lab-coat-holding-a-syringe-7vActJfluGw"
+    image: "https://images.unsplash.com/photo-1550792436-181701c71f63?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     name: "Bariatric Surgery Center",
@@ -42,7 +42,7 @@ const departments = [
     nameAr: "مركز صحة المرأة",
     description: "Complete women's healthcare including obstetrics, gynecology, and specialized surgeries",
     descriptionAr: "رعاية صحية شاملة للمرأة تشمل التوليد وأمراض النساء والجراحات المتخصصة",
-    image: "https://unsplash.com/photos/white-blue-and-orange-medication-pill-KltoLK6Mk-g"
+    image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     name: "Neurology & Neurosurgery",
