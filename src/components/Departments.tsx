@@ -28,7 +28,7 @@ const departments = [
     nameAr: "الكلى والغسيل الكلوي",
     description: "Advanced kidney care with modern dialysis units and transplant services",
     descriptionAr: "رعاية متقدمة للكلى مع وحدات غسيل كلوي حديثة وخدمات زراعة الكلى",
-    image: "https://unsplash.com/photos/man-in-white-medical-scrub-lying-on-hospital-bed-J12RfFH-2ZE"
+    image: "https://unsplash.com/photos/a-man-in-a-blue-lab-coat-holding-a-syringe-7vActJfluGw"
   },
   {
     name: "Bariatric Surgery Center",
