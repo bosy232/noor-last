@@ -12,10 +12,6 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('');
   const navRef = useRef<HTMLElement>(null);
 
-  const handleLogin = () => {
-    window.location.href = 'http://nooral-shorouk.byethost7.com/en/login';
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -124,23 +120,14 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          <div className={`flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-4`}>
+          <div className="md:hidden">
             <button
-              onClick={handleLogin}
-              className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-md hover:shadow-lg flex items-center text-sm"
+              onClick={toggleMenu}
+              className="text-gray-700"
+              aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
             >
-              <User className={`w-4 h-4 ${isArabic ? 'ml-2' : 'mr-2'}`} />
-              <span>{t('nav.patientPortal')}</span>
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-            <div className="md:hidden">
-              <button
-                onClick={toggleMenu}
-                className="text-gray-700"
-                aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
-              >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
           </div>
         </div>
 
