@@ -12,6 +12,10 @@ import React, { useState, useEffect, useRef } from 'react';
       const [isScrolled, setIsScrolled] = useState(false);
       const [activeSection, setActiveSection] = useState('');
       const navRef = useRef<HTMLElement>(null);
+      const handleLogin = () => {
+    window.location.href = 'http://nooral-shorouk.byethost7.com/en/login';
+  };
+    
 
       useEffect(() => {
         const handleScroll = () => {
@@ -93,6 +97,11 @@ import React, { useState, useEffect, useRef } from 'react';
                   <Phone className={`w-5 h-5 ${isArabic ? 'ml-2' : 'mr-2'}`} />
                   <span>02-26888860</span>
                 </a>
+                 
+                <button onClick={handleLogin} className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-md hover:shadow-lg flex items-center text-sm">
+                  <User className={`w-4 h-4 ${isArabic ? 'ml-2' : 'mr-2'}`} />
+                  <span>{isArabic ? 'تسجيل الدخول' : 'Login'}</span>
+                </button>
                 <button className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-md hover:shadow-lg flex items-center text-sm">
                   <User className={`w-4 h-4 ${isArabic ? 'ml-2' : 'mr-2'}`} />
                   <span>{t('nav.patientPortal')}</span>
