@@ -105,7 +105,7 @@ const Navbar = () => {
               className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-md hover:shadow-lg flex items-center text-sm"
             >
               <User className={`w-4 h-4 ${isArabic ? 'ml-2' : 'mr-2'}`} />
-              <span>{t('nav.login')}</span>
+              <span>{isArabic ? 'تسجيل الدخول' : 'Login'}</span>
             </button>
             <LanguageToggle />
           </div>
@@ -143,7 +143,7 @@ const Navbar = () => {
                 className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-md hover:shadow-lg flex items-center text-sm"
               >
                 <User className={`w-4 h-4 ${isArabic ? 'ml-2' : 'mr-2'}`} />
-                <span>{t('nav.login')}</span>
+                <span>{isArabic ? 'تسجيل الدخول' : 'Login'}</span>
               </button>
               <LanguageToggle />
             </div>
