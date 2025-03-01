@@ -12,6 +12,15 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('');
   const navRef = useRef<HTMLElement>(null);
 
+  // Function to handle login button click
+  const handleLogin = () => {
+    if (isArabic) {
+      window.location.href = 'http://nooral-shorouk.byethost7.com/ar/login';
+    } else {
+      window.location.href = 'http://nooral-shorouk.byethost7.com/en/login';
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -49,83 +58,59 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      ref={navRef}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white'
-      }`}
-    >
+    <nav ref={navRef} className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white'
+    }`}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           <div className={`flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-6`}>
             <div className="flex-shrink-0">
-              <img src={logo} alt="Logo" className="h-12" />
+              <img
+                src={logo}
+                alt="Logo"
+                className="h-12"
+              />
             </div>
-            <div
-              className={`hidden md:flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-6`}
-            >
-              <a
-                href="#services"
-                className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${
-                  activeSection === 'services' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('services')}
-              >
+            <div className={`hidden md:flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-6`}>
+              <a href="#services" className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${activeSection === 'services' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('services')}>
                 {t('nav.services')}
               </a>
-              <a
-                href="#departments"
-                className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${
-                  activeSection === 'departments' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('departments')}
-              >
+              <a href="#departments" className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${activeSection === 'departments' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('departments')}>
                 {isArabic ? 'المراكز الطبية' : 'Medical Centers'}
               </a>
-              <a
-                href="#doctors"
-                className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${
-                  activeSection === 'doctors' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('doctors')}
-              >
+              <a href="#doctors" className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${activeSection === 'doctors' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('doctors')}>
                 {t('nav.doctors')}
               </a>
-              <a
-                href="#testimonials"
-                className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${
-                  activeSection === 'testimonials' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('testimonials')}
-              >
+              <a href="#testimonials" className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${activeSection === 'testimonials' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('testimonials')}>
                 {isArabic ? 'آراء مرضانا' : 'Testimonials'}
               </a>
-              <a
-                href="#about"
-                className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${
-                  activeSection === 'about' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('about')}
-              >
+              <a href="#about" className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${activeSection === 'about' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('about')}>
                 {isArabic ? 'عن المستشفى' : 'About Us'}
               </a>
-              <a
-                href="#contact"
-                className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${
-                  activeSection === 'contact' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('contact')}
-              >
+              <a href="#contact" className={`text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-md ${activeSection === 'contact' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('contact')}>
                 {t('nav.contact')}
               </a>
             </div>
           </div>
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-gray-700"
-              aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
+          <div className={`hidden md:flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-4`}>
+            <a 
+              href="tel:0226888860" 
+              className="flex items-center text-gray-700 hover:text-primary-600 transition-colors"
             >
+              <Phone className={`w-5 h-5 ${isArabic ? 'ml-2' : 'mr-2'}`} />
+              <span>02-26888860</span>
+            </a>
+            <button
+              onClick={handleLogin}
+              className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-md hover:shadow-lg flex items-center text-sm"
+            >
+              <User className={`w-4 h-4 ${isArabic ? 'ml-2' : 'mr-2'}`} />
+              <span>{t('nav.login')}</span>
+            </button>
+            <LanguageToggle />
+          </div>
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-gray-700" aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}>
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -135,65 +120,32 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <div className={`flex flex-col ${isArabic ? 'items-end' : 'items-start'} space-y-4`}>
-              <a
-                href="#services"
-                className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${
-                  activeSection === 'services' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('services')}
-              >
+              <a href="#services" className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${activeSection === 'services' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('services')}>
                 {t('nav.services')}
               </a>
-              <a
-                href="#departments"
-                className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${
-                  activeSection === 'departments' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('departments')}
-              >
+              <a href="#departments" className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${activeSection === 'departments' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('departments')}>
                 {isArabic ? 'المراكز الطبية' : 'Medical Centers'}
               </a>
-              <a
-                href="#doctors"
-                className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${
-                  activeSection === 'doctors' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('doctors')}
-              >
+              <a href="#doctors" className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${activeSection === 'doctors' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('doctors')}>
                 {t('nav.doctors')}
               </a>
-              <a
-                href="#testimonials"
-                className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${
-                  activeSection === 'testimonials' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('testimonials')}
-              >
+              <a href="#testimonials" className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${activeSection === 'testimonials' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('testimonials')}>
                 {isArabic ? 'آراء مرضانا' : 'Testimonials'}
               </a>
-              <a
-                href="#about"
-                className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${
-                  activeSection === 'about' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('about')}
-              >
+              <a href="#about" className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${activeSection === 'about' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('about')}>
                 {isArabic ? 'عن المستشفى' : 'About Us'}
               </a>
-              <a
-                href="#contact"
-                className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${
-                  activeSection === 'contact' ? 'text-primary-600' : ''
-                }`}
-                onClick={() => handleNavLinkClick('contact')}
-              >
+              <a href="#contact" className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${activeSection === 'contact' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('contact')}>
                 {t('nav.contact')}
               </a>
-              <div className="pt-4 border-t w-full">
-                <div className={`flex ${isArabic ? 'justify-end' : 'justify-start'}`}>
-                  <LanguageToggle />
-                </div>
-              </div>
+              <button
+                onClick={handleLogin}
+                className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-md hover:shadow-lg flex items-center text-sm"
+              >
+                <User className={`w-4 h-4 ${isArabic ? 'ml-2' : 'mr-2'}`} />
+                <span>{t('nav.login')}</span>
+              </button>
+              <LanguageToggle />
             </div>
           </div>
         )}
