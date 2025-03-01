@@ -68,7 +68,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="Logo"
-                className="h-20"
+                className="h-25"
               />
             </div>
             <div className={`hidden md:flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-6`}>
