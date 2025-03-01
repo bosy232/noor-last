@@ -28,11 +28,11 @@ import React, { useEffect } from 'react';
         >
           <Navbar />
           <Hero />
+          <AboutUs />
           <Services />
           <Departments />
           <Doctors />
           <Testimonials />
-          <AboutUs />
           <CallToAction />
           <Contact />
           <Footer />
