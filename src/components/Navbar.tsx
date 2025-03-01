@@ -137,6 +137,11 @@ import React, { useState, useEffect, useRef } from 'react';
                   <a href="#contact" className={`text-gray-700 hover:text-primary-600 transition-colors py-2 px-4 rounded-md ${activeSection === 'contact' ? 'text-primary-600' : ''}`} onClick={() => handleNavLinkClick('contact')}>
                     {t('nav.contact')}
                   </a>
+                  {/* زر تسجيل الدخول في القائمة المتنقلة */}
+                  <button onClick={handleLogin} className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-md hover:shadow-lg flex items-center text-sm">
+                     <User className={`w-4 h-4 ${isArabic ? 'ml-2' : 'mr-2'}`} />
+                     <span>{t('nav.patientPortal')}</span>
+                  </button>
                   <div className="pt-4 border-t w-full">
                     <div className={`flex ${isArabic ? 'justify-end' : 'justify-start'}`}>
                       <LanguageToggle />
