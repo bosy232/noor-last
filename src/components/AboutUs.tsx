@@ -1,5 +1,6 @@
 import React from 'react';
     import { useTranslation } from 'react-i18next';
+import teems from '../assets/images/teems.png';
 // import teems from '../assets/images/teems.jpg';
 
 
